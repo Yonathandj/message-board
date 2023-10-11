@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  include ./partials/form.pug
-  ul
-    each message in messages
-      div
-        h2= message.user
-        h4= message.message
-        p= message.createdAt
+  div#home-wrapper
+    h2 All messages
+    ul
+      each message in messages
+        div.message-box
+          h3 From: #{message.user}
+          h4= message.message
+          p= message.createdAt

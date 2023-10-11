@@ -17,7 +17,7 @@ const messages = [
 ];
 
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Message Board', messages });
+  res.render('index', { messages });
 });
 
 router.route('/new')
@@ -25,7 +25,7 @@ router.route('/new')
     res.render('new', { title: 'Express' });
   })
   .post(function (req, res) {
-    res.send('successfully added message')
+    res.redirect('/');
   })
 
 module.exports = router;

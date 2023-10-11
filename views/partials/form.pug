@@ -1,9 +1,9 @@
 form(action="/new", method="post")
- label(for="name") Name : 
- input(type="text" placeholder="Enter your name" id="name")
- label(for="mesage") Message : 
- input(type="text" placeholder="Enter your message" id="message")
- section 
-    a(href="/") Cancel
-    button(type="submit") Create 
+ section.input-section
+  label(for="name") Name : 
+  input(type="text" placeholder="Enter your name" id="name")
+ section.input-section
+  label(for="mesage") Simple message to the world : 
+  input(type="text" placeholder="Enter your message" id="message")
+ button(type="submit") Add
 
