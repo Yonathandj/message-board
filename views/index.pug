@@ -2,4 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  include ./partials/form.pug
+  ul
+    each message in messages
+      div
+        h2= message.user
+        h4= message.message
+        p= message.createdAt
