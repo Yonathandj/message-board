@@ -2,24 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const messageValidatorSchema = require('../validator/messageValidator');
+const messageService = require('../services/messageService');
 
-const messages = [
-  {
-    id: 0,
-    user: "Amando",
-    message: "Hi there!",
-    createdAt: new Date()
-  },
-  {
-    id: 1,
-    user: "Charles",
-    message: "What a beautiful world!",
-    createdAt: new Date()
-  }
-];
-
-router.get('/', function (req, res) {
-  res.render('index', { messages });
+router.get('/', async function (req, res) {
+  const messagesDB = await messageService.getMessages();
+  res.render('index', { messagesDB });
 });
 
 router.route('/new')
@@ -32,7 +19,7 @@ router.route('/new')
       throw new Error(error.message)
     }
 
-    
+    messageService.postMessage(value);
     res.redirect('/')
   })
 

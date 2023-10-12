@@ -1,12 +1,20 @@
+require('dotenv').config()
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
+
+// Connect To Database
+mongoose.connect(process.env.DATABASE_URL).
+  catch(error => { throw new Error(error) });
+// 
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

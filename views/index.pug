@@ -4,7 +4,7 @@ block content
   div#home-wrapper
     h2 All messages
     ul
-      each message in messages
+      each message in messagesDB
         div.message-box
           h3 From: #{message.user}
           h4= message.message
