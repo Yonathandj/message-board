@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const messageValidatorSchema = require('../validator/messageValidator');
+
 const messages = [
   {
     id: 0,
@@ -25,7 +27,13 @@ router.route('/new')
     res.render('new', { title: 'Express' });
   })
   .post(function (req, res) {
-    res.redirect('/');
+    const { value, error } = messageValidatorSchema.validate(req.body);
+    if (error) {
+      throw new Error(error.message)
+    }
+
+    
+    res.redirect('/')
   })
 
 module.exports = router;
