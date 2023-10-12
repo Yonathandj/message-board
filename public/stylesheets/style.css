@@ -116,3 +116,51 @@ form button:hover {
 #error-validation-wrapper a {
   color: rgb(44, 40, 40);
 }
+
+@media screen and (max-width: 660px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 540px) {
+  #wrapper {
+    max-width: 100%;
+  }
+  nav {
+    gap: 10px;
+    padding: 1rem;
+    text-align: center;
+    flex-direction: column;
+  }
+  nav ul {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 13px;
+  }
+  .message-box h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+  }
+  .message-box h4 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 0.2rem;
+  }
+  .message-box p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 12px;
+  }
+}
