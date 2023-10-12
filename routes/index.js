@@ -11,12 +11,13 @@ router.get('/', async function (req, res) {
 
 router.route('/new')
   .get(function (req, res) {
-    res.render('new', { title: 'Express' });
+    res.render('new');
   })
   .post(function (req, res) {
     const { value, error } = messageValidatorSchema.validate(req.body);
     if (error) {
-      throw new Error(error.message)
+      res.render('errorValidation', { error: error.message })
+      return;
     }
 
     messageService.postMessage(value);

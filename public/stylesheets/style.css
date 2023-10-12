@@ -28,7 +28,7 @@ nav #company-name {
   color: rgb(42, 34, 34);
 }
 nav ul {
-  gap: 10px;
+  gap: 20px;
   display: flex;
   list-style: none;
   align-items: center;
@@ -40,7 +40,9 @@ nav ul a {
   color: rgb(42, 34, 34);
 }
 #home-wrapper,
-#form-wrapper {
+#form-wrapper,
+#error-validation-wrapper,
+#error-system-wrapper {
   display: flex;
   margin-top: 4rem;
   align-items: center;
@@ -48,7 +50,8 @@ nav ul a {
   justify-content: center;
 }
 #home-wrapper h2,
-#form-wrapper h2 {
+#form-wrapper h2,
+#error-validation-wrapper h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -105,4 +108,11 @@ form button:hover {
   display: flex;
   margin-bottom: 15px;
   flex-direction: column;
+}
+#error-validation-wrapper p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+#error-validation-wrapper a {
+  color: rgb(44, 40, 40);
 }
